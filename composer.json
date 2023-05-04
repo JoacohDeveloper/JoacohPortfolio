@@ -1,0 +1,17 @@
+{
+    "name": "intel/gameaccshop",
+    "description": "Pagina GameAccShop",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Intel\\GameAccShop\\": "src/",
+            "Model\\" : "./models",
+            "Controllers\\" : "./controllers",
+            "MVC\\": "./"
+        }
+    },
+    "require": {
+        "vlucas/phpdotenv": "^5.5",
+        "symfony/dotenv": "^6.2"
+    }
+}

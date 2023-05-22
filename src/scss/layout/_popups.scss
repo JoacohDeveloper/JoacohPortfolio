@@ -1,0 +1,90 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.outside-popup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    background: transparent;
+    backdrop-filter: blur(5px);
+
+    .popup {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        width: 95%;
+        height: 70%;
+        @include m.tel {
+            width: 60%;
+            height: 70%;
+            border-radius: 1.5rem;
+        }
+        @include m.desktop {
+            width: 35%;
+            height: 70%;
+            border-radius: 1.5rem;
+        }
+        background: linear-gradient(146.55deg, #FF00C8 -331.68%, rgba(255, 0, 200, 0) 110.61%);
+
+        &:nth-child(2) {
+            background-color: #ffff;
+        }
+        .popup-top {
+            height: 5rem;
+            display: flex;
+            justify-content: right;
+            align-items: center;
+            border-bottom: 3px solid #ccc;
+            .top-container {
+                display: flex;
+                width: 50%;
+                height: 100%;
+                justify-content: space-between;
+                align-items: center;
+                margin-right: 2rem;
+                .popup-title {
+                    font-size: 2rem;
+                }
+                .popup-close {
+                    height: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    transition: transform .1s ease-in-out, filter .1s ease-in;
+                    cursor: pointer;
+                    &:hover {
+                        img {
+                            transform: translateY(-5px);
+                            transition: transform .1s ease-in-out;
+                        }
+                    }
+
+                    img {
+                        height: 80%;
+                        filter: invert(99%) sepia(75%) saturate(0%) hue-rotate(321deg) brightness(106%) contrast(100%);
+                    }
+                }
+            }
+        }
+
+    }
+
+}
+.disabled {
+    display: none;
+}
+
+.truncated {
+    height: 100vh;
+    overflow: hidden !important;
+}
+
+.popup {
+    display: flex;
+    flex-direction: column;
+}

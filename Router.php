@@ -34,9 +34,7 @@ class Router
         if ($fn) {
             call_user_func($fn, $this);
         } else {
-            http_response_code(404);
-            echo "Error 404";
-            exit;
+            header("Location: /joacoh-web-portfolio");
         }
     }
 

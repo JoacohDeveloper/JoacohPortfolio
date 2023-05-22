@@ -1,5 +1,5 @@
 {
-  "name": "gameaccshop",
+  "name": "joacohportfolio",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -28,11 +28,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JoacohDeveloper/GameAccShop.git"
+    "url": "git+https://github.com/JoacohDeveloper/JoacohPortfolio.git"
   },
   "bugs": {
-    "url": "https://github.com/JoacohDeveloper/GameAccShop/issues"
+    "url": "https://github.com/JoacohDeveloper/JoacohPortfolio/issues"
   },
-  "homepage": "https://github.com/JoacohDeveloper/GameAccShop#readme",
+  "homepage": "https://github.com/JoacohDeveloper/JoacohPortfolio#readme",
   "description": ""
 }

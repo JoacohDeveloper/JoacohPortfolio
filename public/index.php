@@ -9,8 +9,10 @@ $router = new Router;
 
 $router->get("/", [Layout::class, "redirect"]);
 $router->get("/joacoh-web-portfolio", [Layout::class, "index"]);
-$router->get("/joacoh-curriculum-vitae", [Layout::class, "downloadcv"]);
+$router->post("/joacoh-web-portfolio", [Layout::class, "index"]);
 
+$router->get("/joacoh-curriculum-vitae", [Layout::class, "downloadcv"]);
+$router->get("/joacoh-web-portfolio/projects/", [Layout::class, "index"]);
 
 
 

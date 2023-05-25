@@ -3,6 +3,7 @@
 namespace Controllers;
 
 use MVC\Router;
+use PHPMailer\PHPMailer\PHPMailer;
 
 class Layout
 {
@@ -12,6 +13,51 @@ class Layout
     }
     public static function index(Router $router)
     {
+        $errores = [];
+        if ($_SERVER["REQUEST_METHOD"] === "POST") {
+
+            if (!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
+                $errores[] = "malformed email";
+            }
+            if (strlen($_POST["message"]) > 255) {
+                $errores[] = "max length of message";
+            }
+            if (strlen($_POST["nombre"] < 1)) {
+                $errores[] = "no name afford";
+            }
+            if (strlen($_POST["email"] < 1)) {
+                $errores[] = "no email afford";
+            }
+            if (empty($errores)) {
+                $mail = new PHPMailer();
+                $mail->isSMTP();
+                $mail->Host = 'sandbox.smtp.mailtrap.io';
+                $mail->SMTPAuth = true;
+                $mail->Port = 2525;
+                $mail->Username = '3d339041765880';
+                $mail->Password = '7f6f3408dcc4ca';
+
+                $mail->setFrom('joacohportfolio@joacoh.com');
+                $mail->addAddress('joacohportfolio@joacoh.com', 'JoacohPortfolio.com');
+                $mail->Subject = 'Mensaje del portfolio';
+
+                // Set HTML
+                $mail->isHTML(TRUE);
+                $mail->CharSet = 'UTF-8';
+
+                $contenido = '<html>';
+                $contenido .= "<p>From: <strong>" . s($_POST["email"]) .  "</strong>.<br> Nombre: <strong>" . s($_POST["nombre"]) .  "</strong>.<br><strong>Mensaje: </strong>" . s($_POST["message"]) . ".</p>";
+                $contenido .= '</html>';
+                $mail->Body = $contenido;
+
+                //Enviar el mail
+                $mail->send();
+            } else {
+                header("Location: /");
+            }
+        }
+
+
         $router->render("welcome/index");
     }
     public static function downloadcv(Router $router)

@@ -1,0 +1,242 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+.education {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    .timeline {
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+    }
+
+    .vertical-mod-hr {
+        width: .6%;
+        height: 65vh;
+        background-color: #ccc;
+        display: none;
+        @include m.tablet {
+            display: flex;
+        }
+    }
+}
+
+
+.timeline-information {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    @include m.tablet {
+        width: 70%;
+    }
+    justify-content: center;
+    height: 100%;
+}
+
+.timeline-data {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+
+.timeline-dates-container {
+    
+    width: 100%;
+    @include m.tablet {
+        width: 20%;
+    }
+}
+
+.timeline-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @include m.tablet {
+        flex-direction: row;
+        align-items: start;
+        
+    }
+}
+
+.timeline-information-header,.timeline-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    h3 {
+        font-size: 1.3rem;
+    }
+    margin-bottom: 2rem;
+}
+
+.timeline-information-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 1.2rem; 
+
+    h2 {
+        font-size: 2rem;
+        
+    }
+    h4 {
+        font-size: 1.2rem;
+        color: #ccc;
+    }
+}
+
+.timeline-information-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    justify-content: center;
+
+
+}
+.timeline-information-text {
+    width: 90%;
+    p {
+        text-align: justify;
+        letter-spacing: 1px;
+        font-size: 1.2rem; 
+        margin-bottom: 2rem; 
+    }
+}
+
+.dates {
+    // align-self: center;
+    justify-self: left;
+    width: 100%;
+    ul {
+        margin-bottom: 2rem;
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        margin-right: 2rem;
+        width: 100%;
+        @include m.tablet {
+            flex-direction: column;
+        }
+
+        li {
+            display: flex;
+            margin: .8rem 0;
+
+            cursor: pointer;
+            p {
+                font-size: 1.2rem;
+                transition: transform .3s ease-in-out;
+            }
+
+            img {
+                filter: invert(99%) sepia(75%)
+                saturate(0%) hue-rotate(321deg) brightness(106%) contrast(100%);
+                transition: transform .3s ease-in-out;
+            }
+            &:hover {
+                img,p {
+                    transform: translate(-10px);
+                    color: #ccc;
+                }
+            }
+        }
+    }
+}
+
+
+.timeline-information-container {
+    display: none;
+
+
+}
+
+.mostrar {
+    display: flex;
+}
+
+
+.selected {
+    img,p {
+        transform: translate(-10px);
+        color: #ccc;
+    }
+
+    &::before {
+        content: url("/build/img/sub-directory.svg");
+        filter: invert(99%) sepia(75%)
+        saturate(0%) hue-rotate(321deg) brightness(106%) contrast(100%);
+        transition: transform .3s ease-in-out;
+        margin-right: .4rem;
+    }
+}
+
+.techs-container {
+    display: flex;
+    margin-bottom: 4rem;
+    justify-content: center;
+    // align-items: center;
+    background-color: transparent;
+    backdrop-filter: blur(5px);
+    box-shadow: -2px 8px 15px 0 rgba(0,0,0,.75);
+    min-height: 12rem;
+    width: 90%;
+    @include m.tablet {
+        width: 50%;
+    }
+
+    .techs {
+        display: flex;
+        flex-wrap: wrap;
+        width: 90%;
+        margin: 2rem 0;
+        .tech {
+           
+            display: flex;
+            align-items: center;
+            padding: .8rem;
+            min-width: 5rem;
+            background-color: #ccc;
+            transition: transform .2s ease-in-out;
+            border-radius: 3rem;
+
+            p {
+                color: #000;
+                font-size: 1.2rem;
+            }
+            
+        }
+    }
+
+}
+
+.techimg {
+    display: flex;
+    align-items: center;
+}
+
+.tech-container {
+    cursor: pointer;
+    height: 2rem;
+    margin: .2rem;
+    display: flex;
+    &:hover {
+        .tech {
+            transform: translateY(-5px);
+
+            p {
+                color: #ff00c8;
+            }
+        }
+    }
+}

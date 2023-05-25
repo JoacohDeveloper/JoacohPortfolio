@@ -109,8 +109,12 @@
         <div class="popup-body">
             <h3>Quieres descargar el Curriculum Vitae?</h3>
             <div class="controls">
-                <a class="btn-controls" href="/joacoh-curriculum-vitae">Descargar</a>
-                <a href="#" class="btn-controls popup-close-btn">Cancelar</a>
+                <div class="btn">
+                    <a class="btn-controls" href="/joacoh-curriculum-vitae">Descargar</a>
+                </div>
+                <div class="btn">
+                    <a href="#" class="btn-controls popup-close-btn">Cancelar</a>
+                </div>
             </div>
         </div>
 
@@ -167,7 +171,7 @@
             </p>
         </div>
     </section>
-    <section id="projects" class="projects-history">
+    <section id="projects" class="section-container">
         <div class="section-title">
             <h3>My Projects & History</h3>
         </div>
@@ -371,12 +375,273 @@
                 </div>
             </div>
         </div>
+        <div class="more-projects">
+            <a class="more-projects-button" href="/joacoh-web-portfolio/projects/">More Projects</a>
+        </div>
     </section>
-    <section id="projects" class="projects-history">
+    <section id="projects" class="section-container timeline-known">
         <div class="section-title">
             <h3>My Knowledge & Education</h3>
         </div>
         <div class="mod-hr"></div>
+
+        <div class="education">
+            <div class="timeline-container">
+                <div class="timeline-dates-container">
+                    <div class="timeline-title">
+                        <h3>Timeline</h3>
+                    </div>
+                    <div class="timeline-data">
+
+                        <div class="timeline">
+                            <div class="dates">
+                                <ul>
+                                    <li class="steps-timeline" data-step="1">
+                                        <img data-step="1" src="/build/img/text.svg" alt="timeline text icon">
+                                        <p data-step="1">
+                                            2020-2023
+                                        </p>
+                                    </li>
+                                    <li class="steps-timeline" data-step="2">
+                                        <img data-step="2" src="/build/img/text.svg" alt="timeline text icon">
+                                        <p data-step="2">
+                                            2021-2022
+                                        </p>
+                                    </li>
+                                    <li class="steps-timeline" data-step="3">
+                                        <img data-step="3" src="/build/img/text.svg" alt="timeline text icon">
+                                        <p data-step="3">2021-2023</p>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="vertical-mod-hr"></div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="timeline-information">
+                    <div class="timeline-information-header">
+                        <h3>Information</h3>
+                    </div>
+                    <section id="step-1" class="timeline-information-container">
+                        <div class="timeline-information-title">
+                            <h2>Udemy</h2>
+                            <h4>Subtitle</h4>
+                        </div>
+                        <div class="timeline-information-text">
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum reiciendis natus voluptatum corrupti quam cum, dolore deserunt voluptates cumque suscipit vitae neque, eum asperiores iste unde pariatur amet quas ex.
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum reiciendis natus voluptatum corrupti quam cum, dolore deserunt voluptates cumque suscipit vitae neque, eum asperiores iste unde pariatur amet quas ex.
+                            </p>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum reiciendis natus voluptatum corrupti quam cum, dolore deserunt voluptates cumque suscipit vitae neque, eum asperiores iste unde pariatur amet quas ex.
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum reiciendis natus voluptatum corrupti quam cum, dolore deserunt voluptates cumque suscipit vitae neque, eum asperiores iste unde pariatur amet quas ex.
+                            </p>
+                        </div>
+                    </section>
+
+                    <section id="step-2" class="timeline-information-container">
+                        <div class="timeline-information-title">
+                            <h2>Utu</h2>
+                            <h4>Subtitle</h4>
+                        </div>
+                        <div class="timeline-information-text">
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum reiciendis natus voluptatum corrupti quam cum, dolore deserunt voluptates cumque suscipit vitae neque, eum asperiores iste unde pariatur amet quas ex.
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum reiciendis natus voluptatum corrupti quam cum, dolore deserunt voluptates cumque suscipit vitae neque, eum asperiores iste unde pariatur amet quas ex.
+                            </p>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum reiciendis natus voluptatum corrupti quam cum, dolore deserunt voluptates cumque suscipit vitae neque, eum asperiores iste unde pariatur amet quas ex.
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum reiciendis natus voluptatum corrupti quam cum, dolore deserunt voluptates cumque suscipit vitae neque, eum asperiores iste unde pariatur amet quas ex.
+                            </p>
+                        </div>
+                    </section>
+
+                    <section id="step-3" class="timeline-information-container">
+                        <div class="timeline-information-title">
+                            <h2>Bios</h2>
+                            <h4>Subtitle</h4>
+                        </div>
+                        <div class="timeline-information-text">
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum reiciendis natus voluptatum corrupti quam cum, dolore deserunt voluptates cumque suscipit vitae neque, eum asperiores iste unde pariatur amet quas ex.
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum reiciendis natus voluptatum corrupti quam cum, dolore deserunt voluptates cumque suscipit vitae neque, eum asperiores iste unde pariatur amet quas ex.
+                            </p>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum reiciendis natus voluptatum corrupti quam cum, dolore deserunt voluptates cumque suscipit vitae neque, eum asperiores iste unde pariatur amet quas ex.
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum reiciendis natus voluptatum corrupti quam cum, dolore deserunt voluptates cumque suscipit vitae neque, eum asperiores iste unde pariatur amet quas ex.
+                            </p>
+                        </div>
+                    </section>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <section id="projects" class="section-container">
+        <div class="section-title">
+            <h3>My Tech Stack</h3>
+        </div>
+        <div class="mod-hr"></div>
+
+        <div class="techs-container">
+            <div class="techs">
+                <div class="tech-container">
+                    <div class="tech">
+                        <div class="techimg">
+                            <img src="/build/img/css3.svg" alt="CSS3">
+                        </div>
+                        <div class="tech-name">
+                            <p>CSS3</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="tech-container">
+                    <div class="tech">
+                        <div class="techimg">
+                            <img src="/build/img/sql.svg" alt="SQL">
+                        </div>
+                        <div class="tech-name">
+                            <p>SQL</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="tech-container">
+                    <div class="tech">
+                        <div class="techimg">
+                            <img src="/build/img/html5.svg" alt="HTML5">
+                        </div>
+                        <div class="tech-name">
+                            <p>HTML5</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="tech-container">
+                    <div class="tech">
+                        <div class="techimg">
+                            <img src="/build/img/mongodb.svg" alt="mongoDB">
+                        </div>
+                        <div class="tech-name">
+                            <p>MongoDB</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="tech-container">
+                    <div class="tech">
+                        <div class="techimg">
+                            <img src="/build/img/javascript.svg" alt="JavaScript">
+                        </div>
+                        <div class="tech-name">
+                            <p>JavaScript</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="tech-container">
+                    <div class="tech">
+                        <div class="techimg">
+                            <img src="/build/img/sass.svg" alt="SASS">
+                        </div>
+                        <div class="tech-name">
+                            <p>SASS</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="tech-container">
+                    <div class="tech">
+                        <div class="techimg">
+                            <img src="/build/img/nodejs.svg" alt="NodeJS">
+                        </div>
+                        <div class="tech-name">
+                            <p>NodeJS</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="tech-container">
+                    <div class="tech">
+                        <div class="techimg">
+                            <img src="/build/img/java.svg" alt="Java">
+                        </div>
+                        <div class="tech-name">
+                            <p>Java</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="tech-container">
+                    <div class="tech">
+                        <div class="techimg">
+                            <img src="/build/img/php.svg" alt="PHP">
+                        </div>
+                        <div class="tech-name">
+                            <p>PHP</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="projects" class="section-container contact-section">
+        <div class="section-title contact-header">
+            <h3>Want to Contact Me?</h3>
+            <div class="mod-hr"></div>
+        </div>
+        <div class="contact-container">
+            <div class="contact-tile">
+                <h3>Contact</h3>
+            </div>
+            <form method="post" action="/joacoh-web-portfolio" class="contact-form">
+                <nav class="contact-nav">
+                    <div class="info">
+                        <div class="info-img">
+                            <img src="/build/img/mail.svg" alt="Email">
+                        </div>
+                        <p title="copy to clipboard" class="copy">joaquinalvarezoficial@outlok.com</p>
+                    </div>
+                    <div class="info">
+                        <div class="info-img">
+                            <a target="_blank" href="https://wa.me/598098561082"><img src="/build/img/whatsapp.svg" alt="Phone number"></a>
+
+                        </div>
+                        <p title="copy to clipboard" class="copy">+598098561082</p>
+                    </div>
+                    <div class="info">
+                        <div class="info-img">
+                            <img src="/build/img/location.svg" alt="Localidad">
+                        </div>
+                        <p>Working from Uruguay to the wide world..</p>
+                    </div>
+                </nav>
+                <div class="contact-fillText">
+                    <h4>Fill in the fields</h4>
+                </div>
+                <div class="contact-inputs">
+                    <div class="inputs-group1">
+                        <div class="input-container nombre">
+                            <label for="nombre">Nombre</label>
+                            <input required autocomplete="off" type="text" id="nombre" name="nombre" placeholder="Juan">
+                        </div>
+                        <div class="input-container email">
+                            <label for="email">Email</label>
+                            <input required autocomplete="off" type="email" id="email" name="email" placeholder="example@example.com">
+                        </div>
+                    </div>
+                    <div class="input-container message">
+                        <label for="message">Mensaje</label>
+                        <div class="textarea-maxlength">
+                            <textarea maxlength="255" autocomplete="off" id="message" name="message" placeholder="Hello, I would like to arrange an interview"></textarea>
+                            <p><span id="count">0</span>/255</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="submit-input">
+                    <div class="submit-container">
+                        <input id="submit" type="button" value="Send">
+                    </div>
+                </div>
+            </form>
+        </div>
+
     </section>
 </main>
 

@@ -7,7 +7,7 @@ const cssnano = require("cssnano");
 const concat = require("gulp-concat");
 const terser = require("gulp-terser-js");
 const rename = require("gulp-rename");
-const imagemin = require("gulp-imagemin"); // Minificar imagenes
+const imagemin = require("gulp-imagemin");
 const notify = require("gulp-notify");
 const cache = require("gulp-cache");
 const clean = require("gulp-clean");
@@ -19,7 +19,6 @@ const paths = {
   imagenes: "src/img/**/*",
 };
 
-// css es una función que se puede llamar automaticamente
 function css() {
   return (
     src(paths.scss)

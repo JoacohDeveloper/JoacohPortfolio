@@ -1,36 +1,56 @@
-const cv = document.querySelectorAll(".img")[3];
-const popupdiv = document.querySelector(".outside-popup");
-const popupContainer = document.querySelector(".popup-util");
-const header = document.querySelector(".header-container");
-const tracker = document.querySelector(".tracker");
-
 //Events
-cv.addEventListener("click", () => {
-  popupdiv.classList.toggle("disabled");
-  document.body.classList.toggle("truncated");
-});
+const togglePopUp = () => {
+  const cv = document.querySelectorAll(".img")[3];
+  const popupdiv = document.querySelector(".outside-popup");
+  const popupContainer = document.querySelector(".popup-util");
+  const popup = document.querySelectorAll(".popup");
 
-//Delegacion de eventos
-popupContainer.addEventListener("click", (e) => {
-  e.target.classList.forEach((element) => {
-    if (element == "popup-close-btn") {
+  popupdiv.addEventListener("click", (e) => {
+    if (e.target.classList[0] == "outside-popup") {
       popupdiv.classList.toggle("disabled");
       document.body.classList.toggle("truncated");
     }
   });
-});
+  cv.addEventListener("click", () => {
+    popupdiv.classList.toggle("disabled");
+    document.body.classList.toggle("truncated");
+  });
 
-document.addEventListener("scroll", (e) => {
-  if (scrollY > header.offsetHeight) {
-    tracker.classList.add("active-tracker");
-  } else {
-    tracker.classList.remove("active-tracker");
-  }
-});
+  //Delegacion de eventos
+  popupContainer.addEventListener("click", (e) => {
+    e.target.classList.forEach((element) => {
+      if (element == "popup-close-btn") {
+        popupdiv.classList.toggle("disabled");
+        document.body.classList.toggle("truncated");
+      }
+    });
+  });
 
-tracker.addEventListener("click", () => {
-  document.documentElement.scrollTop = document.body.scrollTop = 0;
-});
+  document.addEventListener("keydown", (e) => {
+    if (e.key == "Escape") {
+      popupdiv.classList.add("disabled");
+      document.body.classList.remove("truncated");
+    }
+  });
+};
+const trackerBubble = () => {
+  const tracker = document.querySelector(".tracker");
+  const header = document.querySelector(".header-container");
+  document.addEventListener("scroll", (e) => {
+    if (scrollY > header.offsetHeight) {
+      tracker.classList.add("active-tracker");
+    } else {
+      tracker.classList.remove("active-tracker");
+    }
+  });
+
+  tracker.addEventListener("click", () => {
+    document.documentElement.scrollTop = document.body.scrollTop = 0;
+  });
+};
+
+togglePopUp();
+trackerBubble();
 
 //Paginador
 
@@ -77,17 +97,68 @@ const iniciarApp = () => {
 };
 iniciarApp();
 
-const submit = document.querySelector("#submit");
-const nombre = document.querySelector('[name="nombre"]');
-const email = document.querySelector('[name="email"]');
-const message = document.querySelector('[name="message"]');
+const contactToggle = () => {
+  const contactSection = document.querySelector(".contact-to-section");
+  const thanks = document.querySelector(".thank-resend");
+  contactSection.classList.toggle("contact_hidden");
+  thanks.classList.toggle("contact_hidden");
 
-submit.addEventListener("click", () => {
-  if (validarContact()) {
-    submit.setAttribute("type", "submit");
-  }
-});
+  thanks.addEventListener("click", (e) => {
+    if (e.target.id == "resend") {
+      thanks.classList.toggle("contact_hidden");
+      contactSection.classList.toggle("contact_hidden");
 
+      localStorage.removeItem("contact-send");
+      email.value = "";
+      message.value = "";
+      nombre.value = "";
+      contactVerify();
+    }
+  });
+};
+
+const isThank = () => {
+  const isSended = Boolean(localStorage.getItem("contact-send"));
+
+  if (isSended) contactToggle();
+};
+isThank();
+
+const contactVerify = () => {
+  const spinner = document.querySelector(".loading-spinner");
+  submit.addEventListener("click", () => {
+    if (validarContact()) {
+      spinner.classList.remove("spinner-hidden");
+      // submit.setAttribute("type", "submit");
+      const form = new FormData();
+
+      form.append("nombre", nombre.value ?? "");
+      form.append("email", email.value ?? "");
+      form.append("message", message.value ?? "");
+
+      try {
+        fetch("/joacoh-web-portfolio/contact", {
+          method: "post",
+          body: form,
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            spinner.classList.add("spinner-hidden");
+            if (data.result === true) {
+              localStorage.setItem("contact-send", "true");
+              contactToggle();
+            } else {
+              spinner.classList.add("spinner-hidden");
+              alert("el correo no se pudo enviar.");
+            }
+          });
+      } catch (error) {
+        spinner.classList.add("spinner-hidden");
+        alert("el correo no se pudo enviar.");
+      }
+    }
+  });
+};
 const validateEmail = (email) => {
   return String(email)
     .toLowerCase()
@@ -96,14 +167,16 @@ const validateEmail = (email) => {
     );
 };
 
-message.addEventListener("input", (e) => {
-  if (message.value.length <= 255) {
-    const count = document.querySelector("#count");
-    count.textContent = message.value.length;
-  } else {
-    message.value = message.value.slice(0, 255);
-  }
-});
+const contactMaxLength = () => {
+  message.addEventListener("input", (e) => {
+    if (message.value.length <= 255) {
+      const count = document.querySelector("#count");
+      count.textContent = message.value.length;
+    } else {
+      message.value = message.value.slice(0, 255);
+    }
+  });
+};
 
 const validarContact = () => {
   if (email.value == "" || !validateEmail(email.value)) {
@@ -150,4 +223,16 @@ const copyToClip = () => {
     });
   });
 };
-copyToClip();
+
+const contact = () => {
+  const submit = document.querySelector("#submit");
+  const nombre = document.querySelector('[name="nombre"]');
+  const email = document.querySelector('[name="email"]');
+  const message = document.querySelector('[name="message"]');
+  contactVerify();
+  copyToClip();
+  validarContact();
+  contactMaxLength();
+};
+
+contact();

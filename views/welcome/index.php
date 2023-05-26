@@ -12,7 +12,7 @@
             <h2>About me</h2>
             <p>
                 <i>Mi nombre es <b>Joaquín Álvarez</b> y naci en Uruguay. A partir
-                    de mi adolescencia descubri la habilidad de <b>programar y desarrollar</b> soluciones eficientes de manera eficaz, como dije desde muy joven empeze en este mundo mirandolo de una manera más abierta por gusto mas no por necesidad y me he ido capacitando con todas las herramientas que estuvieran a mi alcance para poder lograr dichas soluciones y proyectos.</i>
+                    de mi adolescencia descubri la habilidad de <b>programar y desarrollar</b> soluciones eficientes de manera eficaz, como dije desde muy joven empeze en este mundo mirandolo de una manera más abierta por gusto mas no por necesidad y me he ido capacitando con todas las herramientas que estuvieran a mi alcance con el fin de lograr dichas soluciones y proyectos.</i>
             </p>
         </div>
         <div class="header-layout">
@@ -167,7 +167,7 @@
             </div>
             <p>
                 <i>Mi nombre es <b>Joaquín Álvarez</b> y naci en Uruguay. A partir
-                    de mi adolescencia descubri la habilidad de <b>programar y desarrollar</b> soluciones eficientes de manera eficaz, como dije desde muy joven empeze en este mundo mirandolo de una manera más abierta por gusto mas no por necesidad y me he ido capacitando con todas las herramientas que estuvieran a mi alcance para poder lograr dichas soluciones y proyectos.</i>
+                    de mi adolescencia descubri la habilidad de <b>programar y desarrollar</b> soluciones eficientes de manera eficaz, como dije desde muy joven empeze en este mundo mirandolo de una manera más abierta por gusto mas no por necesidad y me he ido capacitando con todas las herramientas que estuvieran a mi alcance con el fin de lograr dichas soluciones y proyectos.</i>
             </p>
         </div>
     </section>
@@ -571,6 +571,16 @@
                 <div class="tech-container">
                     <div class="tech">
                         <div class="techimg">
+                            <img width="20" src="/build/img/csharp.svg" alt="CSharp">
+                        </div>
+                        <div class="tech-name">
+                            <p>CSharp</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="tech-container">
+                    <div class="tech">
+                        <div class="techimg">
                             <img src="/build/img/php.svg" alt="PHP">
                         </div>
                         <div class="tech-name">
@@ -590,7 +600,7 @@
             <div class="contact-tile">
                 <h3>Contact</h3>
             </div>
-            <form method="post" action="/joacoh-web-portfolio" class="contact-form">
+            <form class="contact-form">
                 <nav class="contact-nav">
                     <div class="info">
                         <div class="info-img">
@@ -612,34 +622,50 @@
                         <p>Working from Uruguay to the wide world..</p>
                     </div>
                 </nav>
-                <div class="contact-fillText">
-                    <h4>Fill in the fields</h4>
-                </div>
-                <div class="contact-inputs">
-                    <div class="inputs-group1">
-                        <div class="input-container nombre">
-                            <label for="nombre">Nombre</label>
-                            <input required autocomplete="off" type="text" id="nombre" name="nombre" placeholder="Juan">
+                <div class="contact-to-section">
+                    <div class="contact-fillText">
+                        <h4>Fill in the fields</h4>
+                    </div>
+                    <div class="contact-inputs">
+                        <div class="inputs-group1">
+                            <div class="input-container nombre">
+                                <label for="nombre">Nombre</label>
+                                <input required autocomplete="off" type="text" id="nombre" name="nombre" placeholder="Juan">
+                            </div>
+                            <div class="input-container email">
+                                <label for="email">Email</label>
+                                <input required autocomplete="off" type="email" id="email" name="email" placeholder="example@example.com">
+                            </div>
                         </div>
-                        <div class="input-container email">
-                            <label for="email">Email</label>
-                            <input required autocomplete="off" type="email" id="email" name="email" placeholder="example@example.com">
+                        <div class="input-container message">
+                            <label for="message">Mensaje</label>
+                            <div class="textarea-maxlength">
+                                <textarea maxlength="255" autocomplete="off" id="message" name="message" placeholder="Hello, I would like to arrange an interview"></textarea>
+                                <p><span id="count">0</span>/255</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="input-container message">
-                        <label for="message">Mensaje</label>
-                        <div class="textarea-maxlength">
-                            <textarea maxlength="255" autocomplete="off" id="message" name="message" placeholder="Hello, I would like to arrange an interview"></textarea>
-                            <p><span id="count">0</span>/255</p>
+                    <div class="submit-input">
+                        <div class="submit-container">
+                            <input id="submit" type="button" value="Send">
                         </div>
                     </div>
-                </div>
-                <div class="submit-input">
-                    <div class="submit-container">
-                        <input id="submit" type="button" value="Send">
+                    <div class="loading-spinner spinner-hidden">
+                        <div class="spinner"></div>
                     </div>
                 </div>
+
             </form>
+            <div class="contact-form">
+                <div class="thank-resend contact_hidden">
+                    <div class="thanks-message">
+                        <h3>Thanks for the message!</h3>
+                    </div>
+                    <div class="resend-button">
+                        <button id="resend" class="resend">Re-send Message</button>
+                    </div>
+                </div>
+            </div>
         </div>
 
     </section>

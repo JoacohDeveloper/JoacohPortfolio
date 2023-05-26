@@ -15,6 +15,7 @@ $router->get("/joacoh-curriculum-vitae", [Layout::class, "downloadcv"]);
 $router->get("/joacoh-web-portfolio/projects/", [Layout::class, "index"]);
 
 
+$router->post("/joacoh-web-portfolio/contact", [Layout::class, "emailTransfer"]);
 
 
 $router->comprobarRutas();
